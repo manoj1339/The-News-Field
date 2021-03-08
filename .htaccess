@@ -1,0 +1,11 @@
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80 
+#RewriteRule ^(.*)$ http://thenewsfield.epizy.com/$1 [R=301,L,NE]
+
+RewriteRule ^/ index.php [NC,L]
+RewriteRule ^content/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+) content.php?news_eng_title=$1&news_id=$2 [NC,L]
+RewriteRule ^category/([a-zA-Z0-9_-]+) category.php?category=$1 [NC,L]
+RewriteRule ^search/([a-zA-Z0-9_-]+) search.php?query=$1 [NC,L]
+RewriteRule ^contact contact.php [NC,L]
+RewriteRule ^about about.php [NC,L]
+RewriteRule ^privacy privacy.php [NC,L]
